@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Memories 💕</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="pink-bg">
+
+  <audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playMusic()">▶️ เล่นเพลง</button>
+
+<script>
+function playMusic() {
+  const audio = document.getElementById("bgMusic");
+  audio.play();
+}
+</script>
+
+  <div class="container">
+    <img id="slide" src="images/pic1.jpg" class="slide-img">
+    <button class="next-surprise" onclick="goSurprise()">
+      มีอะไรอยากให้ดูอีก 💝
+    </button>
+  </div>
+
+  <script>
+    const images = [
+      "images/pic1.jpg",
+      "images/pic2.jpg",
+      "images/pic3.jpg"
+    ];
+    let index = 0;
+    const slide = document.getElementById("slide");
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      slide.src = images[index];
+    }, 3000);
+
+    function goSurprise() {
+      window.location.href = "surprise.html";
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
